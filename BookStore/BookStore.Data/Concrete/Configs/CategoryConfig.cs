@@ -11,7 +11,7 @@ namespace BookStore.Data.Concrete.Configs
 		{
 			builder.HasKey(c => c.Id);
 			builder.Property(c => c.Id).ValueGeneratedOnAdd();
-			builder.ToTable("Kategoriler");
+			
 
 			builder.Property(c => c.Name).IsRequired().HasMaxLength(100);
 
@@ -62,25 +62,10 @@ namespace BookStore.Data.Concrete.Configs
                     Url = "kisisel-gelisim"
                 },
 
-				new Category
-				{
-                    Id = 6,
-                    Name = "Araştırma-Tarih",
-                    Description = "Günümüzden en az 50 yıl önce yaşanmış bir olayın veya durumun netlikten ödün verilmeyerek, doğru bir biçimde incelenerek aktarılmasına yönelik kaleme alınan kitap serisidir.",
-                    Url = "arastirma-tarih"
-                },
-
-				new Category
-				{
-                    Id = 7,
-                    Name = "Çizgi Roman",
-                    Description = "Çizgi ile hikâye anlatmak için birbirini takip eden panellerin  kullanıldığı bir sanat türü.",
-                    Url = "cizgi-roman"
-                },
 
                 new Category
                 {
-                    Id = 8,
+                    Id = 6,
                     Name = "Çok Satanlar",
                     Description = "Son zamanlarda en çok okunan kitapların bir araya geldiği çok satanlar serisidir.",
                     Url = "cok-satanlar"

@@ -1,4 +1,5 @@
 ﻿using System;
+using BookStore.Data.Concrete.Configs;
 using BookStore.Entity.Concrete;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,13 @@ namespace BookStore.Data.Concrete.Contexts
 		public DbSet<Product> Products{ get; set; }
 
 		public DbSet<ProductCategory> ProductCategories { get; set; }
-	}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+			modelBuilder.ApplyConfigurationsFromAssembly(typeof(CategoryConfig).Assembly);
+
+			base.OnModelCreating(modelBuilder);
+        }
+    }
 }
 
